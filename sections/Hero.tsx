@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Hintergrundbild */}
       <Image
         src="/images/hero.jpg"
-        alt="Ebru Creative Hair Salon Köln"
+        alt="Ebru Creative Hair Salon Freudenstadt"
         fill
         className="object-cover object-center"
         priority

@@ -1,13 +1,30 @@
 import Image from "next/image";
 
-// Dateinamen anpassen sobald Fotos in /public/gallery/ liegen
 const bilder = [
-  { id: 1, src: "/gallery/foto1.jpg", alt: "Balayage", span: "md:col-span-2 md:row-span-2" },
-  { id: 2, src: "/gallery/foto2.jpg", alt: "Damen-Schnitt", span: "" },
-  { id: 3, src: "/gallery/foto3.jpg", alt: "Coloration", span: "" },
-  { id: 4, src: "/gallery/foto4.jpg", alt: "Hochsteckfrisur", span: "" },
-  { id: 5, src: "/gallery/foto5.jpg", alt: "Herren-Schnitt", span: "" },
-  { id: 6, src: "/gallery/foto6.jpg", alt: "Styling", span: "md:col-span-2" },
+  {
+    id: 1,
+    src: "/gallery/foto1.jpg",
+    alt: "Blondes Styling",
+    span: "md:col-span-2 md:row-span-2",
+  },
+  {
+    id: 2,
+    src: "/gallery/foto2.jpg",
+    alt: "Damen-Haarschnitt",
+    span: "",
+  },
+  {
+    id: 3,
+    src: "/gallery/foto3.jpg",
+    alt: "Coloration",
+    span: "",
+  },
+  {
+    id: 4,
+    src: "/gallery/foto4.jpg",
+    alt: "Ebru Heim – Creative Director",
+    span: "md:col-span-3",
+  },
 ];
 
 export default function Gallery() {
@@ -20,7 +37,7 @@ export default function Gallery() {
           <div className="flex items-center gap-4">
             <div className="h-px w-10 bg-[#c9a96e]" />
             <span className="text-[#c9a96e] text-xs tracking-[0.4em] uppercase">
-              Unsere Arbeit
+              Impressionen
             </span>
             <div className="h-px w-10 bg-[#c9a96e]" />
           </div>
@@ -33,25 +50,24 @@ export default function Gallery() {
           </h2>
           <p className="text-[#6b6b6b] text-sm tracking-wide max-w-md mt-2">
             Jedes Haar erzählt eine Geschichte — hier sind einige unserer
-            liebsten Transformationen.
+            liebsten Ergebnisse.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[220px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[260px]">
           {bilder.map((bild) => (
             <div
               key={bild.id}
               className={`group relative overflow-hidden bg-[#e8e2d9] ${bild.span}`}
             >
-              {/* Bild */}
               <Image
                 src={bild.src}
                 alt={bild.alt}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-[#1a1a1a]/0 group-hover:bg-[#1a1a1a]/50 transition-all duration-500 flex items-end">
                 <div className="w-full px-6 py-5 translate-y-full group-hover:translate-y-0 transition-transform duration-400">

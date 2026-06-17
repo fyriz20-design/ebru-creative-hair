@@ -2,6 +2,7 @@ const navLinks = [
   { label: "Über uns", href: "#ueber-uns" },
   { label: "Leistungen", href: "#leistungen" },
   { label: "Galerie", href: "#galerie" },
+  { label: "Qualifikationen", href: "#qualifikationen" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 

@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Über uns", href: "#ueber-uns" },
   { label: "Leistungen", href: "#leistungen" },
   { label: "Galerie", href: "#galerie" },
+  { label: "Qualifikationen", href: "#qualifikationen" },
   { label: "Kontakt", href: "#kontakt" },
 ];
 
@@ -20,6 +21,13 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const textClass = scrolled
+    ? "text-[#1a1a1a] hover:text-[#c9a96e]"
+    : "text-white hover:text-[#c9a96e]";
+
+  const logoTextClass = scrolled ? "text-[#1a1a1a]" : "text-white";
+  const hamburgerColor = scrolled ? "bg-[#1a1a1a]" : "bg-white";
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,7 +40,7 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex flex-col leading-tight">
           <span
-            className="text-xl font-semibold tracking-widest uppercase text-[#1a1a1a]"
+            className={`text-xl font-semibold tracking-widest uppercase transition-colors duration-300 ${logoTextClass}`}
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             Ebru
@@ -43,12 +51,12 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-widest uppercase text-[#1a1a1a] hover:text-[#c9a96e] transition-colors duration-200"
+              className={`text-xs tracking-widest uppercase transition-colors duration-200 ${textClass}`}
             >
               {link.label}
             </a>
@@ -58,7 +66,11 @@ export default function Navigation() {
         {/* CTA Button */}
         <a
           href="#kontakt"
-          className="hidden md:inline-flex items-center px-6 py-2.5 border border-[#c9a96e] text-[#c9a96e] text-xs tracking-[0.2em] uppercase hover:bg-[#c9a96e] hover:text-white transition-all duration-300"
+          className={`hidden md:inline-flex items-center px-6 py-2.5 border text-xs tracking-[0.2em] uppercase transition-all duration-300 ${
+            scrolled
+              ? "border-[#c9a96e] text-[#c9a96e] hover:bg-[#c9a96e] hover:text-white"
+              : "border-white text-white hover:bg-white hover:text-[#1a1a1a]"
+          }`}
         >
           Termin buchen
         </a>
@@ -70,17 +82,17 @@ export default function Navigation() {
           aria-label="Menü öffnen"
         >
           <span
-            className={`block w-6 h-px bg-[#1a1a1a] transition-all duration-300 ${
+            className={`block w-6 h-px ${hamburgerColor} transition-all duration-300 ${
               menuOpen ? "rotate-45 translate-y-2" : ""
             }`}
           />
           <span
-            className={`block w-6 h-px bg-[#1a1a1a] transition-all duration-300 ${
+            className={`block w-6 h-px ${hamburgerColor} transition-all duration-300 ${
               menuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`block w-6 h-px bg-[#1a1a1a] transition-all duration-300 ${
+            className={`block w-6 h-px ${hamburgerColor} transition-all duration-300 ${
               menuOpen ? "-rotate-45 -translate-y-2" : ""
             }`}
           />
