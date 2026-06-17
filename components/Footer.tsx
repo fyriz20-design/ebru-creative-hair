@@ -35,7 +35,7 @@ export default function Footer() {
             </p>
           </div>
           <p className="text-white/40 text-sm leading-relaxed max-w-xs">
-            Ihr Friseursalon in Köln für professionelle Haarschnitte,
+            Ihr Friseursalon in Freudenstadt für professionelle Haarschnitte,
             Colorationen und kreative Haarstylings.
           </p>
           {/* Social Media */}
@@ -92,15 +92,10 @@ export default function Footer() {
             Kontakt
           </h4>
           <ul className="flex flex-col gap-3 text-sm text-white/50">
-            <li>Musterstraße 12<br />50667 Köln</li>
+            <li>Bahnhofstraße 36<br />72250 Freudenstadt</li>
             <li>
-              <a href="tel:+4922112345678" className="hover:text-white transition-colors duration-200">
-                +49 221 123 456 78
-              </a>
-            </li>
-            <li>
-              <a href="mailto:info@ebru-creative-hair.de" className="hover:text-white transition-colors duration-200">
-                info@ebru-creative-hair.de
+              <a href="tel:+4974418518" className="hover:text-white transition-colors duration-200">
+                07441 / 85186
               </a>
             </li>
           </ul>

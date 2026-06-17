@@ -15,9 +15,9 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Ebru Creative Hair – Friseursalon in Köln",
+  title: "Ebru Creative Hair – Friseursalon in Freudenstadt",
   description:
-    "Ihr Friseursalon für professionelle Haarschnitte, Colorationen und Haarpflege in Köln. Jetzt Termin online buchen.",
+    "Ihr Friseursalon in Freudenstadt für professionelle Haarschnitte, Colorationen und Haarpflege. Inh. Ebru Heim. Jetzt Termin vereinbaren: 07441 / 85186.",
 };
 
 export default function RootLayout({

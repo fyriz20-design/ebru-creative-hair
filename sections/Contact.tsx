@@ -1,11 +1,11 @@
 const oeffnungszeiten = [
-  { tag: "Montag", zeit: "Geschlossen" },
-  { tag: "Dienstag", zeit: "09:00 – 19:00" },
-  { tag: "Mittwoch", zeit: "09:00 – 19:00" },
-  { tag: "Donnerstag", zeit: "09:00 – 20:00" },
-  { tag: "Freitag", zeit: "09:00 – 19:00" },
-  { tag: "Samstag", zeit: "09:00 – 17:00" },
-  { tag: "Sonntag", zeit: "Geschlossen" },
+  { tag: "Montag", zeit: "Ruhetag" },
+  { tag: "Dienstag", zeit: "08:00 – 18:00" },
+  { tag: "Mittwoch", zeit: "08:00 – 18:00" },
+  { tag: "Donnerstag", zeit: "08:00 – 18:00" },
+  { tag: "Freitag", zeit: "08:00 – 18:00" },
+  { tag: "Samstag", zeit: "08:00 – 14:00" },
+  { tag: "Sonntag", zeit: "Ruhetag" },
 ];
 
 export default function Contact() {
@@ -43,8 +43,8 @@ export default function Contact() {
                 Adresse
               </h3>
               <p className="text-[#1a1a1a] leading-relaxed">
-                Musterstraße 12<br />
-                50667 Köln
+                Bahnhofstraße 36<br />
+                72250 Freudenstadt
               </p>
             </div>
 
@@ -55,16 +55,10 @@ export default function Contact() {
               </h3>
               <div className="flex flex-col gap-1">
                 <a
-                  href="tel:+4922112345678"
+                  href="tel:+4974418518"
                   className="text-[#1a1a1a] hover:text-[#c9a96e] transition-colors duration-200"
                 >
-                  +49 221 123 456 78
-                </a>
-                <a
-                  href="mailto:info@ebru-creative-hair.de"
-                  className="text-[#1a1a1a] hover:text-[#c9a96e] transition-colors duration-200"
-                >
-                  info@ebru-creative-hair.de
+                  07441 / 85186
                 </a>
               </div>
             </div>
@@ -83,8 +77,8 @@ export default function Contact() {
                     <span className="text-sm text-[#6b6b6b]">{tag}</span>
                     <span
                       className={`text-sm ${
-                        zeit === "Geschlossen"
-                          ? "text-[#6b6b6b]/50"
+                        zeit === "Ruhetag"
+                          ? "text-[#6b6b6b]/50 italic"
                           : "text-[#1a1a1a]"
                       }`}
                     >

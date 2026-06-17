@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="flex items-center justify-center gap-4 mb-8">
           <div className="h-px w-16 bg-[#c9a96e]" />
           <span className="text-[#c9a96e] text-xs tracking-[0.4em] uppercase">
-            Köln
+            Freudenstadt
           </span>
           <div className="h-px w-16 bg-[#c9a96e]" />
         </div>

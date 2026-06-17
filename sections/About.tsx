@@ -13,7 +13,7 @@ export default function About() {
           <div className="relative aspect-[3/4] bg-[#e8e2d9] flex items-end overflow-hidden">
             <Image
               src="/images/about.jpg"
-              alt="Ebru Aydın – Inhaberin Ebru Creative Hair"
+              alt="Ebru Heim – Inhaberin Ebru Creative Hair"
               fill
               className="object-cover object-top"
             />
@@ -23,7 +23,7 @@ export default function About() {
                 className="text-white text-2xl font-light italic"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                Ebru Aydın
+                Ebru Heim
               </p>
               <p className="text-[#c9a96e] text-xs tracking-[0.3em] uppercase mt-1">
                 Inhaberin & Creative Director
@@ -55,8 +55,8 @@ export default function About() {
           <div className="flex flex-col gap-4 text-[#6b6b6b] text-base leading-relaxed">
             <p>
               Willkommen bei <strong className="text-[#1a1a1a] font-normal">Ebru Creative Hair</strong> —
-              Ihrem Friseursalon in Köln, wo Kreativität auf Handwerkskunst trifft.
-              Mit über 15 Jahren Erfahrung in der Branche bieten wir Ihnen ein
+              Ihrem Friseursalon in Freudenstadt, wo Kreativität auf Handwerkskunst trifft.
+              Mit langjähriger Erfahrung in der Branche bieten wir Ihnen ein
               umfassendes Spektrum an Friseur-Dienstleistungen auf höchstem Niveau.
             </p>
             <p>
