@@ -96,7 +96,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-3 text-sm text-white/50">
             <li>Bahnhofstraße 36<br />72250 Freudenstadt</li>
             <li>
-              <a href="tel:+4974418518" className="hover:text-white transition-colors duration-200">
+              <a href="tel:+49744185186" className="hover:text-white transition-colors duration-200">
                 07441 / 85186
               </a>
             </li>

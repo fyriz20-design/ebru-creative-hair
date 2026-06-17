@@ -1,3 +1,5 @@
+import { type FormEvent } from "react";
+
 const oeffnungszeiten = [
   { tag: "Montag", zeit: "Ruhetag" },
   { tag: "Dienstag", zeit: "08:00 – 18:00" },
@@ -8,7 +10,25 @@ const oeffnungszeiten = [
   { tag: "Sonntag", zeit: "Ruhetag" },
 ];
 
+"use client";
+
 export default function Contact() {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const vorname = (form.elements.namedItem("vorname") as HTMLInputElement)?.value || "";
+    const nachname = (form.elements.namedItem("nachname") as HTMLInputElement)?.value || "";
+    const kontakt = (form.elements.namedItem("kontakt") as HTMLInputElement)?.value || "";
+    const leistung = (form.elements.namedItem("leistung") as HTMLSelectElement)?.value || "";
+    const nachricht = (form.elements.namedItem("nachricht") as HTMLTextAreaElement)?.value || "";
+
+    const subject = encodeURIComponent(`Terminanfrage von ${vorname} ${nachname}`);
+    const body = encodeURIComponent(
+      `Name: ${vorname} ${nachname}\nTelefon/E-Mail: ${kontakt}\nGewünschte Leistung: ${leistung}\n\nNachricht:\n${nachricht}`
+    );
+    window.location.href = `mailto:info@ebru-creative-hair.de?subject=${subject}&body=${body}`;
+  }
+
   return (
     <section id="kontakt" className="bg-[#faf8f5] py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -55,7 +75,7 @@ export default function Contact() {
               </h3>
               <div className="flex flex-col gap-1">
                 <a
-                  href="tel:+4974418518"
+                  href="tel:+49744185186"
                   className="text-[#1a1a1a] hover:text-[#c9a96e] transition-colors duration-200"
                 >
                   07441 / 85186
@@ -91,7 +111,7 @@ export default function Contact() {
           </div>
 
           {/* Rechte Spalte: Formular */}
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-xs tracking-[0.2em] uppercase text-[#6b6b6b]">
@@ -99,6 +119,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="vorname"
                   placeholder="Max"
                   className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] placeholder:text-[#6b6b6b]/40 focus:outline-none focus:border-[#c9a96e] transition-colors duration-200"
                 />
@@ -109,6 +130,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="nachname"
                   placeholder="Mustermann"
                   className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] placeholder:text-[#6b6b6b]/40 focus:outline-none focus:border-[#c9a96e] transition-colors duration-200"
                 />
@@ -121,7 +143,8 @@ export default function Contact() {
               </label>
               <input
                 type="text"
-                placeholder="+49 221 ..."
+                name="kontakt"
+                placeholder="+49 7441 ..."
                 className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] placeholder:text-[#6b6b6b]/40 focus:outline-none focus:border-[#c9a96e] transition-colors duration-200"
               />
             </div>
@@ -130,13 +153,16 @@ export default function Contact() {
               <label className="text-xs tracking-[0.2em] uppercase text-[#6b6b6b]">
                 Gewünschte Leistung
               </label>
-              <select className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] focus:outline-none focus:border-[#c9a96e] transition-colors duration-200 appearance-none">
+              <select
+                name="leistung"
+                className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] focus:outline-none focus:border-[#c9a96e] transition-colors duration-200 appearance-none"
+              >
                 <option value="">Bitte wählen …</option>
                 <option>Damen-Haarschnitt</option>
                 <option>Herren-Haarschnitt</option>
                 <option>Coloration</option>
-                <option>Balayage & Strähnen</option>
-                <option>Haarpflege & Kur</option>
+                <option>Balayage &amp; Strähnen</option>
+                <option>Haarpflege &amp; Kur</option>
                 <option>Hochsteckfrisur</option>
                 <option>Sonstiges</option>
               </select>
@@ -148,6 +174,7 @@ export default function Contact() {
               </label>
               <textarea
                 rows={3}
+                name="nachricht"
                 placeholder="Ihr Wunschtermin oder weitere Infos …"
                 className="border-b border-[#d0c9be] bg-transparent py-3 text-[#1a1a1a] placeholder:text-[#6b6b6b]/40 focus:outline-none focus:border-[#c9a96e] transition-colors duration-200 resize-none"
               />
