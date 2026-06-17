@@ -51,6 +51,20 @@ export default function Contact() {
           </h2>
         </div>
 
+        {/* Google Maps */}
+        <div className="mb-16 overflow-hidden shadow-sm">
+          <iframe
+            src="https://maps.google.com/maps?q=Bahnhofstra%C3%9Fe+36%2C+72250+Freudenstadt%2C+Deutschland&output=embed&z=16"
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Ebru Creative Hair – Standort"
+          />
+        </div>
+
         {/* Grid: Info + Formular */}
         <div className="grid md:grid-cols-2 gap-16">
 
