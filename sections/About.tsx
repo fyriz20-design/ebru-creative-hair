@@ -7,18 +7,18 @@ export default function About() {
 
         {/* Bild-Spalte */}
         <div className="flex justify-center md:justify-start">
-          <div className="relative">
+          <div className="relative inline-block">
             {/* Goldener Rahmen-Effekt (versetzt) */}
             <div className="absolute -top-3 -left-3 w-full h-full border border-[#c9a96e] opacity-40" />
 
-            {/* Portrait-Container — fest auf 300×450px, kein Stretch über 2× */}
-            <div className="relative w-[280px] h-[420px] sm:w-[300px] sm:h-[450px] bg-[#e8e2d9] overflow-hidden">
+            {/* Portrait-Container — 200×300px, nahe am Original (150×226px Quelle) */}
+            <div className="relative w-[190px] h-[285px] sm:w-[200px] sm:h-[300px] bg-[#e8e2d9] overflow-hidden">
               <Image
                 src="/images/about.jpg"
                 alt="Ebru Heim – Inhaberin Ebru Creative Hair"
                 fill
                 className="object-cover object-top"
-                sizes="300px"
+                sizes="200px"
               />
               {/* Name-Overlay */}
               <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-[#1a1a1a]/70 to-transparent">

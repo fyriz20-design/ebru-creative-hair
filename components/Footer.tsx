@@ -1,9 +1,10 @@
 const navLinks = [
-  { label: "Über uns", href: "#ueber-uns" },
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Qualifikationen", href: "#qualifikationen" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Über uns", href: "/#ueber-uns" },
+  { label: "Leistungen", href: "/#leistungen" },
+  { label: "Galerie", href: "/#galerie" },
+  { label: "Qualifikationen", href: "/#qualifikationen" },
+  { label: "Unser Team", href: "/team" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 const rechtliches = [
