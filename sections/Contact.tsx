@@ -1,3 +1,5 @@
+"use client";
+
 import { type FormEvent } from "react";
 
 const oeffnungszeiten = [
@@ -9,8 +11,6 @@ const oeffnungszeiten = [
   { tag: "Samstag", zeit: "08:00 – 14:00" },
   { tag: "Sonntag", zeit: "Ruhetag" },
 ];
-
-"use client";
 
 export default function Contact() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
