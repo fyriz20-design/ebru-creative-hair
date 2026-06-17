@@ -1,30 +1,14 @@
 import Image from "next/image";
 
 const bilder = [
-  {
-    id: 1,
-    src: "/gallery/foto1.jpg",
-    alt: "Blondes Styling",
-    span: "md:col-span-2 md:row-span-2",
-  },
-  {
-    id: 2,
-    src: "/gallery/foto2.jpg",
-    alt: "Damen-Haarschnitt",
-    span: "",
-  },
-  {
-    id: 3,
-    src: "/gallery/foto3.jpg",
-    alt: "Coloration",
-    span: "",
-  },
-  {
-    id: 4,
-    src: "/gallery/foto4.jpg",
-    alt: "Ebru Heim – Creative Director",
-    span: "md:col-span-3",
-  },
+  { id: 1, src: "/gallery/foto1.jpg", alt: "Styling", span: "md:col-span-2 md:row-span-2" },
+  { id: 2, src: "/gallery/foto3.jpg", alt: "Schnitt", span: "" },
+  { id: 3, src: "/gallery/foto4.jpg", alt: "Coloration", span: "" },
+  { id: 4, src: "/gallery/foto5.jpg", alt: "Haarpflege", span: "md:col-span-1" },
+  { id: 5, src: "/gallery/foto2.jpg", alt: "Balayage", span: "md:col-span-2" },
+  { id: 6, src: "/gallery/foto6.jpg", alt: "Hochsteckfrisur", span: "" },
+  { id: 7, src: "/gallery/foto7.jpg", alt: "Kreation", span: "md:col-span-2" },
+  { id: 8, src: "/gallery/foto8.jpg", alt: "Styling", span: "" },
 ];
 
 export default function Gallery() {
@@ -55,7 +39,7 @@ export default function Gallery() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[260px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 auto-rows-[240px]">
           {bilder.map((bild) => (
             <div
               key={bild.id}
@@ -65,8 +49,8 @@ export default function Gallery() {
                 src={bild.src}
                 alt={bild.alt}
                 fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover object-center"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-[#1a1a1a]/0 group-hover:bg-[#1a1a1a]/50 transition-all duration-500 flex items-end">
